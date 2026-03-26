@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Extensions Manager",
+  "version": "1.0.0",
+  "description": "Manage your browser extensions with a clean, modern UI.",
+  "permissions": ["storage", "management"],
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "32": "icons/favicon-32x32.png"
+    }
+  },
+  "icons": {
+    "32": "icons/favicon-32x32.png"
+  },
+  "options_page": "options.html",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
